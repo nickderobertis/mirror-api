@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/nickderobertis/mirror-api/compare/v1.0.0...v1.1.0) (2023-08-21)
+
+
+### Features
+
+* Add mirror-api script ([d200b80](https://github.com/nickderobertis/mirror-api/commit/d200b80d96e72308129ab9fe3b7652d989277d7b))
+
 ## 1.0.0 (2023-08-21)
 
 
