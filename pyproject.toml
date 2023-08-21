@@ -37,6 +37,8 @@ python-multipart = "*"
 [tool.poetry.group.test.dependencies]
 pytest = "*"
 pytest-cov = "*"
+httpx = "^0.24.1"
+anyio = "^3.7.1"
 
 [tool.black]
 include = 'mirror_api.*\.pyi?$|tests.*\.pyi?$'
