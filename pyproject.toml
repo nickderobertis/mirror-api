@@ -29,6 +29,10 @@ documentation = "https://nickderobertis.github.io/mirror-api"
 
 [tool.poetry.dependencies]
 python = ">=3.8"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+typer = "*"
+python-multipart = "*"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
