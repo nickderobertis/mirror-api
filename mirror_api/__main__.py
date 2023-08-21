@@ -2,7 +2,7 @@ import typer
 import uvicorn
 
 
-def main(port: int = 8060, reload: bool = False):
+def _main(port: int = 8060, reload: bool = False):
     """
     Run a sample API server that returns whatever requests are sent to / as responses
     """
@@ -15,5 +15,9 @@ def main(port: int = 8060, reload: bool = False):
     )
 
 
+def main():
+    typer.run(_main)
+
+
 if __name__ == "__main__":
-    typer.run(main)
+    main()

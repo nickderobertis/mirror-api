@@ -30,6 +30,9 @@ documentation = "https://nickderobertis.github.io/mirror-api"
 [tool.setuptools]
 packages = ["mirror_api"]
 
+[tool.poetry.scripts]
+mirror-api = "mirror_api.__main__:main"
+
 [tool.poetry.dependencies]
 python = ">=3.8"
 fastapi = "*"
