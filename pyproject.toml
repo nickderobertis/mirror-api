@@ -27,6 +27,9 @@ include = ["conf.py", "version.py"]
 repository = "https://github.com/nickderobertis/mirror-api"
 documentation = "https://nickderobertis.github.io/mirror-api"
 
+[tool.setuptools]
+packages = ["mirror_api"]
+
 [tool.poetry.dependencies]
 python = ">=3.8"
 fastapi = "*"
