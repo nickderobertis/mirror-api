@@ -1,3 +1,3 @@
-from sample_api import create_app
+from mirror_api import create_app
 
 app = create_app()

@@ -2,7 +2,8 @@
 A router that for each HTTP method, will return the request as the response
 """
 from fastapi import APIRouter, Request
-from sample_api.reflected_response import ReflectedResponse
+
+from mirror_api.reflected_response import ReflectedResponse
 
 router = APIRouter()
 

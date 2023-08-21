@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from sample_api._router import router
+
+from mirror_api._router import router
 
 
 def create_app() -> FastAPI:
