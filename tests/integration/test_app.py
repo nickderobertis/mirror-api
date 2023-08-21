@@ -1,3 +1,4 @@
+import json
 from typing import Dict
 from urllib.parse import urlencode
 
@@ -24,12 +25,15 @@ async def test_mirrors_get_request(client: AsyncClient):
     headers = {
         "x-test-header": "test",
     }
-    response = await client.get("/", params=params, headers=headers)
+    cookies = {
+        "cookie1": "test",
+    }
+    response = await client.get("/", params=params, headers=headers, cookies=cookies)
     assert response.status_code == 200
     response = ReflectedResponse(**response.json())
     assert response.method == "GET"
     assert _has_headers(headers, response.headers)
-    assert response.cookies is None
+    assert response.cookies == cookies
     assert response.json_ is None
     assert response.body == ""
     assert urlencode(params) in response.url
@@ -58,6 +62,30 @@ async def test_mirrors_post_form_request(client: AsyncClient):
     assert response.body == "test=test"
     assert urlencode(params) in response.url
     assert response.form == form
+
+
+@pytest.mark.anyio
+async def test_mirrors_post_json_request(client: AsyncClient):
+    params = {
+        "q": "test",
+        "page": 1,
+    }
+    headers = {
+        "x-test-header": "test",
+    }
+    json_data = {
+        "test": "test",
+    }
+    response = await client.post("/", params=params, headers=headers, json=json_data)
+    assert response.status_code == 200
+    response = ReflectedResponse(**response.json())
+    assert response.method == "POST"
+    assert _has_headers(headers, response.headers)
+    assert response.cookies is None
+    assert response.json_ == json_data
+    assert response.body == json.dumps(json_data)
+    assert urlencode(params) in response.url
+    assert response.form is None
 
 
 def _has_headers(expect_headers: Dict[str, str], headers: Dict[str, str]) -> bool:
