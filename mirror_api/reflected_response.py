@@ -8,11 +8,11 @@ from pydantic import BaseModel, Field
 class ReflectedResponse(BaseModel):
     method: str
     url: str
-    headers: Dict[str, str] | None
-    cookies: Dict[str, str] | None
+    headers: Union[Dict[str, str], None]
+    cookies: Union[Dict[str, str], None]
     json_: Union[dict, list, None] = Field(alias="json")
     body: str
-    form: Dict[str, str] | None
+    form: Union[Dict[str, str], None]
 
     @classmethod
     async def from_request(cls, request: Request) -> "ReflectedResponse":
