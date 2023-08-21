@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "mirror-api-lint"
+description = "Linting for mirror-api"
+version = "1.0.0"
+authors = ["Nick DeRobertis <derobertis.nick@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+mirror-api = {path = "../..", develop = true}
+flake8 = "*"
+mypy = "*"
