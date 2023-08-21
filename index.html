@@ -300,7 +300,11 @@
 <h1 id="mirror-api">mirror-api<a class="headerlink" href="#mirror-api" title="Permalink to this heading">¶</a></h1>
 <section id="overview">
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
-<p>An API that returns the structure of the request as the response</p>
+<p>An API that returns the structure of the request as the response.</p>
+<p>If you send it a request with any method to any path besides <code class="docutils literal notranslate"><span class="pre">/docs</span></code>,
+it will return a response matching the structure of the request.</p>
+<p>This is useful as a sample server to test infrastructure and ensure
+that requests are being sent and received as expected.</p>
 </section>
 <section id="getting-started">
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h2>
@@ -308,14 +312,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mirror</span><span class="o">-</span><span class="n">api</span>
 </pre></div>
 </div>
-<p>A simple example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mirror_api</span>
-
-<span class="c1"># Do something with mirror_api</span>
-</pre></div>
-</div>
-<p>See a
-<a class="reference external" href="https://nickderobertis.github.io/mirror-api/tutorial.html">more in-depth tutorial here.</a></p>
+<p>Simply run the <code class="docutils literal notranslate"><span class="pre">mirror-api</span></code> command to start the server. To see all available
+options, run <code class="docutils literal notranslate"><span class="pre">mirror-api</span> <span class="pre">--help</span></code>.</p>
 </section>
 <section id="links">
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permalink to this heading">¶</a></h2>
