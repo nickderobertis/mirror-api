@@ -65,7 +65,12 @@ async def test_mirrors_post_form_request(client: AsyncClient):
 
 
 @pytest.mark.anyio
-async def test_mirrors_post_json_request(client: AsyncClient):
+@pytest.mark.parametrize("method", ["PUT", "DELETE", "POST", "PATCH", "OPTIONS"])
+async def test_mirrors_json_request(client: AsyncClient, method: str):
+    await _standard_json_test(method, client)
+
+
+async def _standard_json_test(method: str, client: AsyncClient):
     params = {
         "q": "test",
         "page": 1,
@@ -76,10 +81,12 @@ async def test_mirrors_post_json_request(client: AsyncClient):
     json_data = {
         "test": "test",
     }
-    response = await client.post("/", params=params, headers=headers, json=json_data)
+    response = await client.request(
+        method, "/", params=params, headers=headers, json=json_data
+    )
     assert response.status_code == 200
     response = ReflectedResponse(**response.json())
-    assert response.method == "POST"
+    assert response.method == method
     assert _has_headers(headers, response.headers)
     assert response.cookies is None
     assert response.json_ == json_data

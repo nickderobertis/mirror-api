@@ -8,6 +8,8 @@ from mirror_api.reflected_response import ReflectedResponse
 router = APIRouter()
 
 
-@router.api_route("/{path_name:path}", methods=["GET", "POST", "PUT", "DELETE"])
+@router.api_route(
+    "/{path_name:path}", methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+)
 async def get(request: Request, path_name: str):
     return await ReflectedResponse.from_request(request)
