@@ -1,3 +1,4 @@
+from typing import Dict
 from urllib.parse import urlencode
 
 import pytest
@@ -28,13 +29,13 @@ async def test_mirrors_get_request(client: AsyncClient):
     response = ReflectedResponse(**response.json())
     assert response.method == "GET"
     assert _has_headers(headers, response.headers)
-    assert response.cookies == {}
+    assert response.cookies is None
     assert response.json_ is None
     assert response.body == ""
     assert urlencode(params) in response.url
-    assert response.form == {}
+    assert response.form is None
 
 
-def _has_headers(expect_headers: dict[str, str], headers: dict[str, str]) -> bool:
+def _has_headers(expect_headers: Dict[str, str], headers: Dict[str, str]) -> bool:
     all_headers = {**DEFAULT_HEADERS, **expect_headers}
     return headers == all_headers
