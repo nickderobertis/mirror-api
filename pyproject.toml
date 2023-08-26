@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mirror-api"
-version = "1.1.0"
+version = "1.2.0"
 description = "An API that returns the structure of the request as the response"
 authors = ["Nick DeRobertis <derobertis.nick@gmail.com>"]
 readme = "README.md"

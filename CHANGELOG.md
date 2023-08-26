@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/nickderobertis/mirror-api/compare/v1.1.0...v1.2.0) (2023-08-26)
+
+
+### Features
+
+* Allow all CORS ([5423580](https://github.com/nickderobertis/mirror-api/commit/5423580bc07ddafef0f00f535259fec8676a0da6))
+
 ## [1.1.0](https://github.com/nickderobertis/mirror-api/compare/v1.0.0...v1.1.0) (2023-08-21)
 
 
