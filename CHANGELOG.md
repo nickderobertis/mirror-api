@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0](https://github.com/nickderobertis/mirror-api/compare/v1.3.0...v1.4.0) (2023-08-27)
+
+
+### Features
+
+* Return path of responding API ([6be4f50](https://github.com/nickderobertis/mirror-api/commit/6be4f507a3aaa9398697a86b3e5839fc98313be2))
+
 ## [1.3.0](https://github.com/nickderobertis/mirror-api/compare/v1.2.0...v1.3.0) (2023-08-27)
 
 
