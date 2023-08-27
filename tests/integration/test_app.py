@@ -1,11 +1,13 @@
 import json
 from typing import Dict
+from unittest.mock import patch
 from urllib.parse import urlencode
 
 import pytest
 from httpx import AsyncClient
 
 from mirror_api import ReflectedResponse
+from mirror_api._router import settings
 
 DEFAULT_HEADERS = {
     "accept": "*/*",
@@ -64,35 +66,45 @@ async def test_mirrors_post_form_request(client: AsyncClient):
     assert response.form == form
 
 
+@pytest.fixture(params=["PUT", "DELETE", "POST", "PATCH", "OPTIONS"])
+def method(request):
+    return request.param
+
+
+@pytest.fixture(params=[200, 400, 500])
+def status_code(request):
+    return request.param
+
+
 @pytest.mark.anyio
-@pytest.mark.parametrize("method", ["PUT", "DELETE", "POST", "PATCH", "OPTIONS"])
-async def test_mirrors_json_request(client: AsyncClient, method: str):
-    await _standard_json_test(method, client)
+async def test_mirrors_json_request(client: AsyncClient, method: str, status_code: int):
+    await _standard_json_test(method, status_code, client)
 
 
-async def _standard_json_test(method: str, client: AsyncClient):
-    params = {
-        "q": "test",
-        "page": 1,
-    }
-    headers = {
-        "x-test-header": "test",
-    }
-    json_data = {
-        "test": "test",
-    }
-    response = await client.request(
-        method, "/", params=params, headers=headers, json=json_data
-    )
-    assert response.status_code == 200
-    response = ReflectedResponse(**response.json())
-    assert response.method == method
-    assert _has_headers(headers, response.headers)
-    assert response.cookies is None
-    assert response.json_ == json_data
-    assert response.body == json.dumps(json_data)
-    assert urlencode(params) in response.url
-    assert response.form is None
+async def _standard_json_test(method: str, status_code: int, client: AsyncClient):
+    with patch.object(settings, "status_code", status_code):
+        params = {
+            "q": "test",
+            "page": 1,
+        }
+        headers = {
+            "x-test-header": "test",
+        }
+        json_data = {
+            "test": "test",
+        }
+        response = await client.request(
+            method, "/", params=params, headers=headers, json=json_data
+        )
+        assert response.status_code == status_code
+        response = ReflectedResponse(**response.json())
+        assert response.method == method
+        assert _has_headers(headers, response.headers)
+        assert response.cookies is None
+        assert response.json_ == json_data
+        assert response.body == json.dumps(json_data)
+        assert urlencode(params) in response.url
+        assert response.form is None
 
 
 def _has_headers(expect_headers: Dict[str, str], headers: Dict[str, str]) -> bool:

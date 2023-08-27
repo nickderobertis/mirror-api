@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from mirror_api._router import router
-
 
 def create_app() -> FastAPI:
+    from mirror_api._router import router
+
     app = FastAPI()
 
     app.add_middleware(
