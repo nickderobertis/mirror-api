@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/nickderobertis/mirror-api/compare/v1.2.0...v1.3.0) (2023-08-27)
+
+
+### Features
+
+* Add support for changing status code ([4f26e47](https://github.com/nickderobertis/mirror-api/commit/4f26e479511fb519df9139b09005f1f71583914b))
+
 ## [1.2.0](https://github.com/nickderobertis/mirror-api/compare/v1.1.0...v1.2.0) (2023-08-26)
 
 
