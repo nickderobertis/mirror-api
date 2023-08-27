@@ -46,7 +46,7 @@
   
   
   
-    <title>mirror_api package &#8212; mirror-api 1.3.0 documentation</title>
+    <title>mirror_api package &#8212; mirror-api 1.4.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -55,7 +55,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_paramlinks.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=3d533f9b"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b308ce55"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -87,7 +87,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="mirror-api 1.3.0 documentation"
+        <a href="../index.html" title="mirror-api 1.4.0 documentation"
            class="md-header-nav__button md-logo">
           
             <i class="md-icon">&#xe869</i>
@@ -173,7 +173,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">mirror-api 1.3.0 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">mirror-api 1.4.0 documentation</a></li>
           <li class="md-tabs__item"><a href="modules.html" class="md-tabs__link">mirror_api</a></li>
       </ul>
     </div>
@@ -186,13 +186,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="mirror-api 1.3.0 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="mirror-api 1.4.0 documentation" class="md-nav__button md-logo">
       
         <i class="md-icon">&#xe869</i>
       
     </a>
     <a href="../index.html"
-       title="mirror-api 1.3.0 documentation">mirror-api</a>
+       title="mirror-api 1.4.0 documentation">mirror-api</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/nickderobertis/mirror-api" title="Go to repository" class="md-source" data-md-source="github">
@@ -258,6 +258,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse.api_path" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse.api_path</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse.body" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse.body</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse.cookies" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse.cookies</span></code></a>
@@ -343,6 +345,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse.api_path" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse.api_path</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse.body" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse.body</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#mirror_api.reflected_response.ReflectedResponse.cookies" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReflectedResponse.cookies</span></code></a>
@@ -408,6 +412,10 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mirror_api.reflected_response.</span></span><span class="sig-name descname"><span class="pre">ReflectedResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mirror_api/reflected_response.html#ReflectedResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mirror_api.reflected_response.ReflectedResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="mirror_api.reflected_response.ReflectedResponse.api_path">
+<span class="sig-name descname"><span class="pre">api_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#mirror_api.reflected_response.ReflectedResponse.api_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
 <dt class="sig sig-object py" id="mirror_api.reflected_response.ReflectedResponse.body">
 <span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></em><a class="headerlink" href="#mirror_api.reflected_response.ReflectedResponse.body" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -421,7 +429,7 @@
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="mirror_api.reflected_response.ReflectedResponse.from_request">
-<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mirror_api/reflected_response.html#ReflectedResponse.from_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mirror_api.reflected_response.ReflectedResponse.from_request" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mirror_api/reflected_response.html#ReflectedResponse.from_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mirror_api.reflected_response.ReflectedResponse.from_request" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#mirror_api.reflected_response.ReflectedResponse" title="mirror_api.reflected_response.ReflectedResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReflectedResponse</span></code></a></p>
@@ -447,7 +455,7 @@
 </dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="mirror_api.reflected_response.ReflectedResponse.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[dict[str,</span> <span class="pre">FieldInfo]]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'body':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'cookies':</span> <span class="pre">FieldInfo(annotation=Union[Dict[str,</span> <span class="pre">str],</span> <span class="pre">NoneType],</span> <span class="pre">required=True),</span> <span class="pre">'form':</span> <span class="pre">FieldInfo(annotation=Union[Dict[str,</span> <span class="pre">str],</span> <span class="pre">NoneType],</span> <span class="pre">required=True),</span> <span class="pre">'headers':</span> <span class="pre">FieldInfo(annotation=Union[Dict[str,</span> <span class="pre">str],</span> <span class="pre">NoneType],</span> <span class="pre">required=True),</span> <span class="pre">'json_':</span> <span class="pre">FieldInfo(annotation=Union[dict,</span> <span class="pre">list,</span> <span class="pre">NoneType],</span> <span class="pre">required=True,</span> <span class="pre">alias='json',</span> <span class="pre">alias_priority=2),</span> <span class="pre">'method':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'url':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#mirror_api.reflected_response.ReflectedResponse.model_fields" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar[dict[str,</span> <span class="pre">FieldInfo]]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'api_path':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'body':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'cookies':</span> <span class="pre">FieldInfo(annotation=Union[Dict[str,</span> <span class="pre">str],</span> <span class="pre">NoneType],</span> <span class="pre">required=True),</span> <span class="pre">'form':</span> <span class="pre">FieldInfo(annotation=Union[Dict[str,</span> <span class="pre">str],</span> <span class="pre">NoneType],</span> <span class="pre">required=True),</span> <span class="pre">'headers':</span> <span class="pre">FieldInfo(annotation=Union[Dict[str,</span> <span class="pre">str],</span> <span class="pre">NoneType],</span> <span class="pre">required=True),</span> <span class="pre">'json_':</span> <span class="pre">FieldInfo(annotation=Union[dict,</span> <span class="pre">list,</span> <span class="pre">NoneType],</span> <span class="pre">required=True,</span> <span class="pre">alias='json',</span> <span class="pre">alias_priority=2),</span> <span class="pre">'method':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'url':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#mirror_api.reflected_response.ReflectedResponse.model_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>Metadata about the fields defined on the model,
 mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
 <p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
