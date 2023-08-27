@@ -40,6 +40,34 @@ async def test_mirrors_get_request(client: AsyncClient):
     assert response.body == ""
     assert urlencode(params) in response.url
     assert response.form is None
+    assert response.api_path == "/"
+
+
+@pytest.mark.anyio
+async def test_mirrors_get_request_at_sub_url(client: AsyncClient):
+    params = {
+        "q": "test",
+        "page": 1,
+    }
+    headers = {
+        "x-test-header": "test",
+    }
+    cookies = {
+        "cookie1": "test",
+    }
+    response = await client.get(
+        "/nested/url", params=params, headers=headers, cookies=cookies
+    )
+    assert response.status_code == 200
+    response = ReflectedResponse(**response.json())
+    assert response.method == "GET"
+    assert _has_headers(headers, response.headers)
+    assert response.cookies == cookies
+    assert response.json_ is None
+    assert response.body == ""
+    assert urlencode(params) in response.url
+    assert response.form is None
+    assert response.api_path == "/nested/url"
 
 
 @pytest.mark.anyio
@@ -64,6 +92,7 @@ async def test_mirrors_post_form_request(client: AsyncClient):
     assert response.body == "test=test"
     assert urlencode(params) in response.url
     assert response.form == form
+    assert response.api_path == "/"
 
 
 @pytest.fixture(params=["PUT", "DELETE", "POST", "PATCH", "OPTIONS"])
@@ -105,6 +134,7 @@ async def _standard_json_test(method: str, status_code: int, client: AsyncClient
         assert response.body == json.dumps(json_data)
         assert urlencode(params) in response.url
         assert response.form is None
+        assert response.api_path == "/"
 
 
 def _has_headers(expect_headers: Dict[str, str], headers: Dict[str, str]) -> bool:

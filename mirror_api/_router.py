@@ -19,7 +19,7 @@ print("Configured router with settings", settings.json(by_alias=True, indent=2))
     response_model=ReflectedResponse,
 )
 async def get(request: Request, path_name: str):
-    data = await ReflectedResponse.from_request(request)
+    data = await ReflectedResponse.from_request(request, f"/{path_name}")
     return JSONResponse(
         content=data.model_dump(by_alias=True), status_code=settings.status_code
     )

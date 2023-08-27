@@ -13,9 +13,10 @@ class ReflectedResponse(BaseModel):
     json_: Union[dict, list, None] = Field(alias="json")
     body: str
     form: Union[Dict[str, str], None]
+    api_path: str
 
     @classmethod
-    async def from_request(cls, request: Request) -> "ReflectedResponse":
+    async def from_request(cls, request: Request, api_path: str) -> "ReflectedResponse":
         body_bytes = await request.body()
 
         return cls(
@@ -26,6 +27,7 @@ class ReflectedResponse(BaseModel):
             json=await _get_json_from_request(request),
             body=body_bytes.decode(),
             form=await _get_form_from_request(request),
+            api_path=api_path,
         )
 
 
